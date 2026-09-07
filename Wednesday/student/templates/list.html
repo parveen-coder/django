@@ -1,0 +1,43 @@
+{% comment %} <h2> list elements are:</h2>
+{%for i in li %}
+<p>{{i}}</p>
+{%endfor%} {% endcomment %}
+{% comment %} <p> Name is {{n}} age is {{r}}</p> {% endcomment %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        {% comment %} <script src="" async defer></script> {% endcomment %}
+        <table border='1'>
+            <caption>Student Details</caption>
+            <tr>
+                <th>Roll no</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+            {%for i in li%}
+            <tr>
+                <td>{{i.0}}</td>
+                <td>{{i.1}}</td>
+                <td>{{i.2}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+
+    </body>
+</html>
