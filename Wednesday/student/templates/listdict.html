@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+
+    {% comment %} <h1>Student List</h1>
+
+    {% for student in students %}
+
+        <p>ID: {{ student.id }}</p>
+        <p>Name: {{ student.name }}</p>
+        <p>Course: {{ student.course }}</p>
+        <p>Marks: {{ student.marks }}</p>
+
+        <hr>
+
+    {% endfor %} {% endcomment %}
+
+    {% comment %} in table  {% endcomment %}
+
+    
+    {% comment %} <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.course }}</td>
+            <td>{{ student.marks }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>  {% endcomment %}
+
+    {% comment %} using key value {% endcomment %}
+
+    <table border="1">
+
+    {% for student in students %}
+
+        <tr>
+            {% for key, value in student.items %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for key, value in student.items %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+
+</table>
+
+
+    {% comment %} <table border="1">
+
+    <!-- Header -->
+    <tr>
+        {% for key, value in students.0.items %}
+            <th>{{ key }}</th>
+        {% endfor %}
+    </tr>
+
+    <!-- Data -->
+    {% for student in students %}
+        <tr>
+            {% for key, value in student.items %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+
+</table>  {% endcomment %}
+</body>
+</html>

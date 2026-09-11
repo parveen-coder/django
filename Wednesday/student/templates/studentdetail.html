@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% comment %} <p>{{s}}</p> {% endcomment %}
+        <h1>Student Details</h1>
+     
+        <table border="1">
+            {% comment %} <tr>
+                <th>Name</th>
+                <th>Roll no</th>
+                <th>Marks</th>
+            </tr>
+            {% for s in s %}
+            <tr>
+                <td>{{s.name}}</td>
+                <td>{{s.rollno}}</td>
+                <td>{{s.marks}}</td>
+            </tr>
+            {%endfor%}  {% endcomment %}
+              
+                <tr>
+                    {% for keys in s.0 %}
+                    <th>{{keys}}</th>
+                    {%endfor%} 
+                </tr>
+                
+            {%for i in s%}
+               
+                <tr> 
+                     {%for key, value in i.items%}
+                    <td>{{value|length}}</td>  
+                    {%endfor%}
+                </tr>
+                
+             {%endfor%}  
+                    {% comment %} {% for key, value in s.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %} {% endcomment %}
+        </table>
+    </body>
+</html>

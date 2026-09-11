@@ -1,0 +1,34 @@
+{% comment %} <p>{{s}}</p> {% endcomment %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {%if s%}
+            <table border="1">
+            <caption>Students Details</caption>
+           
+                <tr>
+                    {%for key in s%}
+                    <th>{{key}}</th>
+                    {%endfor%}
+                </tr> 
+                <tr>
+                     {%for key, value in s.items%}
+                    <td>{{value}}</td>
+                     {%endfor%}
+                </tr>
+           
+        </table>
+        {%else%}
+        <p>Student not found</p>
+       {%endif%}
+    </body>
+</html>

@@ -18,10 +18,36 @@ urlpatterns = [
     # path('html1/<str:name>', views.html1),
     re_path(r'^html1/(?P<name>[A-Za-z]{9})/$', views.html1),
     path('listdata/',views.listdata),
-    path('studdict/',views.userdict)
-,
+    path('studdict/',views.userdict),
+    path('listdict/', views.listdic),
+    path('newdict/', views.newdict),
+    path("student/<int:rollno>/", views.student_details),
+    path('studentdetail/', views.studentdict),
+    path('studentdisplay/<int:roll>/',views.studentdict2),
+    # path('usertemplate/', views.usertemplate),
 
-  
-  
+
+    path("homenew/123/dgfdtgdhg/fgghfg", views.homenew, name="home"),
+    path("studentsnew/", views.student_listnew, name="students"),
+    path("aboutnew/", views.aboutnew, name="about"),
+   
+
+    path('studentroll/<int:roll>/', views.studentdict),
+    path('userdetails/<int:roll>/',views.userdetails),
+
+    path("divide/", views.divide),
+    path("multiple/", views.calculate),
+ 
+    path('newstudent/', views.studentnew),
+    path('studenttwo/', views.studenttwo),
+
+
+    path('home3/', views.home3),
+
+    path('wednesday/', views.wednesday),
+    path('adminpage/', views.adminpage),
+    path('wednes/', views.wednes),
+
+
    
 ]

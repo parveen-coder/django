@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+       {% comment %} {% for student in students %}
+
+        <h2>{{ student.name }}</h2>
+
+        <h3>Subjects</h3>
+        {% for subject in student.subjects %}
+            {{ subject }} <br>
+        {% endfor %}
+
+        <h3>Marks</h3>
+        {% for mark in student.marks %}
+            {{ mark }} <br>
+        {% endfor %}
+
+    {% endfor %} {% endcomment %}
+
+
+
+    {% comment %} in table {% endcomment %}
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Subjects</th>
+            <th>Marks</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+
+            <td>
+                {% for subject in student.subjects %}
+                    {{ subject }}<br>
+                {% endfor %}
+            </td>
+
+            <td>
+                {% for mark in student.marks %}
+                    {{ mark }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>

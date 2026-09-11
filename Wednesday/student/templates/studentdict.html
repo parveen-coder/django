@@ -13,7 +13,7 @@
        <table border='1'>
             <caption>Students Detail</Caption>
             
-            <tr>
+            {% comment %} <tr>
                 {% for keys in d %}
                 <th>{{keys}}</th>
                     {%endfor%}
@@ -23,7 +23,14 @@
                  {%for key, value in d.items%}
                 <td>{{value}}</td>
                    {%endfor%} 
+            </tr> {% endcomment %}
+
+            {% for key, value in d.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
             </tr>
+            {% endfor %}
           
        </table>
         

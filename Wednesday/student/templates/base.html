@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+            Student Portal
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Portal</h1>
+    </header>
+
+
+    {% include "components/navbar.html" %}
+
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    {% include "components/footer.html" %}
+
+</body>
+</html>

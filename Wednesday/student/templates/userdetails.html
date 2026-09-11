@@ -1,0 +1,35 @@
+{% comment %} {{u}} {% endcomment %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {%if u%}
+      <table border="1">
+        <caption>User Details</caption>
+        <tr>
+            {% for key in u%}
+           
+            <th>{{key}}</th>
+          
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for key, value in u.items%}
+            <td>{{value}}</td>
+            {%endfor%}
+        </tr>
+
+      </table>
+      {%else%}
+      <p>No user found</p>
+      {%endif%}
+    </body>
+</html>

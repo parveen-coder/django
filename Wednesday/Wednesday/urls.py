@@ -19,6 +19,7 @@ from django.contrib import admin
 # from student import views
 from django.urls import path,include, re_path
 # from user import views
+from django.shortcuts import render
 
 
 
@@ -28,4 +29,5 @@ urlpatterns = [
     path('student/',include("student.urls")),
 
 ] 
+
 

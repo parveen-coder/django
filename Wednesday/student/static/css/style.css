@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    padding: 10px;
+    background: #eeeeee;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.student-card {
+    border: 1px solid #999;
+    padding: 15px;
+    margin: 15px 0;
+    width: 300px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
