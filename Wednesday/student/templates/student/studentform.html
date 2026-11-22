@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Student Registration Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            {% comment %} {{form.as_p}} {% endcomment %}
+            <label>Name:</label>
+            {{ form.name }}
+
+            {% for error in form.name.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            <label>Age:</label>
+            {{ form.age }}
+
+            {% for error in form.age.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            <label>Email:</label>
+            {{ form.email }}
+
+            {% for error in form.email.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            <label>Country:</label>
+            {{ form.country }}
+
+            {% for error in form.country.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            <label>Image:</label>
+            {{ form.image }}
+
+            {% for error in form.image.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            <label>File:</label>
+            {{ form.file }}
+
+            {% for error in form.file.errors %}
+                <span style="color:red;">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+            <br><br>
+
+            {% comment %} name, age and email {% endcomment %}
+            {% comment %} <label>Enter student name : </label>
+            <input type="text" name="name"><br><br>
+
+            <label>Enter the student age : </label>
+            <input type="number" name="age"><br><br>
+
+            <label>Enter the student email : </label>
+            <input type="email" name="email"><br><br> {% endcomment %}
+
+            <button type="submit">Register Student</button>
+
+        </form>
+       
+    </body>
+</html>

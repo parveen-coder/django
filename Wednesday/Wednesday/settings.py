@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-k47mjylha!)y+2@7h)p0e&z@hxvl#l2p#rsp(ma54#piya=d6p
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'student',
     'user',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'Wednesday.urls'
@@ -70,6 +72,10 @@ TEMPLATES = [
     },
 ]
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 WSGI_APPLICATION = 'Wednesday.wsgi.application'
 
 
@@ -78,8 +84,15 @@ WSGI_APPLICATION = 'Wednesday.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+       'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'jot',
+        'USER': 'django_jot',
+        'PASSWORD': 'jot123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    
     }
 }
 
@@ -124,3 +137,12 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = '/student/dashboard/'
+
+LOGOUT_REDIRECT_URL = '/login/'

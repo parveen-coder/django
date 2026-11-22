@@ -1,0 +1,79 @@
+<form method="POST" enctype="multipart/form-data"  >
+
+    {% csrf_token %}
+
+   {{ form.as_p }} 
+
+
+    {% comment %} <label>Name:</label>
+   {{ form.name }}
+  {% for error in form.name.errors %}
+    <span class="error" style="color:red;">{{ error }}</span>
+{% endfor %} 
+<br>
+<label>Email:</label>
+ {{ form.email }}
+  {% for error in form.email.errors %}
+    <span class="error" style="color:red;">{{ error }}</span>
+{% endfor %} 
+<br>
+<label>Age:</label>
+ {{ form.age }}
+  {% for error in form.age.errors %}
+    <span class="error" style="color:red;">{{ error }}</span>
+{% endfor %}  {% endcomment %}
+<br>
+
+
+ <button type="submit">Submit</button>
+ {% comment %} {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+    {% endfor %} {% endcomment %}
+ {% comment %} {% if form.errors %}
+    <h3>There are errors:</h3>
+        {{ form.errors }}
+ {% endif %} {% endcomment %}
+
+</form>
+
+
+     {% comment %} {% if form.errors %}
+        <h3>There are errors:</h3>
+        {{ form.errors }}
+    {% endif %}  {% endcomment %}
+  {% comment %}   {% endcomment %}
+
+
+    {% comment %} {{ form.name }}
+
+{% endcomment %}
+
+
+    {% comment %} <label>Name:</label>
+     {{ form.name }}
+
+    {% for error in form.name.errors %}
+        <span style="color:red;">{{ error }}</span>
+    {% endfor %}
+
+    <br><br>
+    <label>Email:</label>
+    {{ form.email }}
+
+    {% for error in form.email.errors %}
+        <span style="color:red;">{{ error }}</span>
+    {% endfor %}
+
+    <br><br>
+
+    <label>Age:</label>
+    {{ form.age }}
+
+    {% for error in form.age.errors %}
+        <span style="color:red;">{{ error }}</span>
+    {% endfor %}
+
+
+    <button type="submit">Submit</button>
+
+</form> {% endcomment %}

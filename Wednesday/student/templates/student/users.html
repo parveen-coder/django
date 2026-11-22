@@ -1,0 +1,8 @@
+<h2>Registered Users</h2>
+
+{% for user in users %}
+
+    <p>{{ user.username }}</p>
+    <p>{{ user.email }}</p>
+
+{% endfor %}

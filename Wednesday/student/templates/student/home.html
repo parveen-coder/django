@@ -1,0 +1,22 @@
+<p>Welcome, {{c}}</p>
+
+
+{% comment %} 
+<h1>Student Management System</h1>
+
+{% if request.user.is_authenticated %}
+
+    <h3>Welcome {{ request.user.username }}</h3>
+
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+{% else %}
+
+    <a href="{% url 'login' %}">Login</a>
+
+{% endif %} {% endcomment %}

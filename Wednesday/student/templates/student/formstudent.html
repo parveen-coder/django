@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <title>Student Regsitration Form </title>
+    </head>
+    <body>
+         <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            {% comment %} {% if form.errors %}
+                <h3>There are errors:</h3>
+                {{ form.errors }}
+            {% endif %} {% endcomment %}
+            {% comment %} <label>Name:</label>
+            <input type="text" name="name">
+            <br>
+            <label>Email:</label>
+            <input type="email" name="email">
+            <br>
+            <label>Age:</label>
+            <input type="number" name="age">
+            <br>  {% endcomment %}
+            <button type="submit">Register</button>
+        </form>
+
+    </body>
+</html>

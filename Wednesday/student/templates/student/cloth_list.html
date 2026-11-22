@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <table border="1" cell padding="10">
+            <caption>Cloths Record</caption>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Operations</th>
+            </tr>
+           {%for cloth in cloths%}
+            <tr>
+                <td>{{cloth.id}}</td>
+                <td>{{cloth.name}}</td>
+                <td>
+                    <a href="{% url 'cloth_details' cloth.id %}">View details</a>
+                    |
+                    <a href="{% url 'cloth_update' cloth.id %}">Update</a>
+                    |
+                    <a href="{% url 'cloth_delete' cloth.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor%}
+        </table>
+
+        <a href="{% url 'cloth_add' %}">Add Cloth</a>
+
+    </body>
+</html>

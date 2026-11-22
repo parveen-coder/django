@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Model</th>
+                
+            </tr>
+
+            <tr>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.model }}</td>
+            </tr>
+
+        
+
+        </table>
+
+        <br>
+
+        <a href="{% url 'car_list' %}">Back to Car List</a>
+
+        <a href="{% url 'car_update' car.id %}">Edit Car</a>
+
+    </body>
+</html>

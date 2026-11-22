@@ -1,0 +1,23 @@
+
+<a href="{% url 'stud_create' %}">Add Student</a>
+
+<table border="1" cellpadding="10">
+    <caption>Students Record</caption>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for stud in studs%}
+    <tr>
+        <td>{{stud.id}}</td>
+        <td>{{stud.name}}</td>
+        <td>
+            <a href="{% url 'stud_detail' stud.id %}">View Details</a>
+            |
+            <a href=" {% url 'stud_update' stud.id %}" > Edit</a>
+            |
+            <a href=" {% url 'stud_delete' stud.id %}">Delete</a>
+    </tr>
+    {%endfor%}
+</table>
